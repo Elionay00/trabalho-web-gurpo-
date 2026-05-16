@@ -3,90 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Produto - Game da Sala</title>
+    <link rel="stylesheet" href="detalhes.css">
 </head>
 
 <body>
+    <header class="header">
+        <h1>GAME DA SALA - ESTÁCIO</h1>
+        <nav>
+            <a href="vitrine.html">VOLTAR</a>
+            <a href="carrinho.html">🛒 CARRINHO</a>
+        </nav>
+    </header>
 
-    <table width="100%" border="1">
-        <tr>
-            <td>
-                <h2>GAME DA SALA - ESTÁCIO</h2>
-            </td>
-            <td align="right"><b>DETALHES DO PRODUTO</b> | <a href="vitrine.html">VOLTAR</a> | <a
-                    href="carrinho.html">🛒 CARRINHO</a></td>
-        </tr>
-    </table>
-
-    <br>
-
-    <table width="80%" align="center" border="1" cellpadding="20">
-        <tr>
-            <td width="40%" align="center">
-                <img src="imgs/marvels-spider-man.jpeg" width="200" height="260"><br>
-            </td>
-            <td width="60%" valign="top">
+    <main class="container">
+        <section class="product-detail">
+            <div class="product-image">
+                <img src="imgs/marvels-spider-man.jpeg" alt="Spider-Man 2">
+            </div>
+            <div class="product-info">
                 <h2>Spider-Man 2</h2>
-                <p><b>Plataforma:</b> PlayStation 5 / PC</p>
-                <p><b>Gênero:</b> Ação, Aventura</p>
-                <p><b>Lançamento:</b> 2025</p>
-                <p><b>Classificação:</b> +16 anos</p>
-                <p><b>Descrição:</b> Spider-Man 2 traz Peter Parker e Miles Morales enfrentando novos vilões como Venom
-                    e Kraven. Com gráficos incríveis e jogabilidade fluida, o jogo permite alternar entre os dois heróis
-                    em uma Nova York totalmente aberta.</p>
-                <p>
-                    <font size="5"><b>Preço: R$ 299,00</b></font>
-                </p>
+                <div class="info-row"><span class="info-label">Plataforma:</span><span class="info-value">PlayStation 5 / PC</span></div>
+                <div class="info-row"><span class="info-label">Gênero:</span><span class="info-value">Ação, Aventura</span></div>
+                <div class="info-row"><span class="info-label">Lançamento:</span><span class="info-value">2025</span></div>
+                <div class="info-row"><span class="info-label">Classificação:</span><span class="info-value">+16 anos</span></div>
+                <p class="description">Spider-Man 2 traz Peter Parker e Miles Morales enfrentando novos vilões como Venom e Kraven. Com gráficos incríveis e jogabilidade fluida, o jogo permite alternar entre os dois heróis em uma Nova York totalmente aberta.</p>
+                <div class="price">Preço: R$ 299,00</div>
+                <div class="btn-group">
+                    <a href="vitrine.html" class="btn-voltar">← VOLTAR</a>
+                    <a href="carrinho.html" class="btn-comprar">🛒 COMPRAR AGORA</a>
+                </div>
+            </div>
+        </section>
 
-                <br>
-                <a href="vitrine.html">
-                    <button>← VOLTAR</button>
-                </a>
-                <a href="carrinho.html">
-                    <button>🛒 COMPRAR AGORA</button>
-                </a>
-            </td>
-        </tr>
-    </table>
+        <section class="tech-specs">
+            <h3>FICHA TÉCNICA</h3>
+            <div class="specs-grid">
+                <div class="spec-item"><span class="spec-label">Desenvolvedora:</span> Insomniac Games</div>
+                <div class="spec-item"><span class="spec-label">Distribuidora:</span> Sony Interactive Entertainment</div>
+                <div class="spec-item"><span class="spec-label">Modos de jogo:</span> Single player</div>
+                <div class="spec-item"><span class="spec-label">Idiomas:</span> Português, Inglês, Espanhol</div>
+            </div>
+        </section>
+    </main>
 
-    <br><br>
-
-    <table width="80%" align="center" border="1" cellpadding="10">
-        <tr>
-            <td align="center">
-                <h3>FICHA TÉCNICA</h3>
-                <table width="100%" border="0">
-                    <tr>
-                        <td><b>Desenvolvedora:</b></td>
-                        <td>Insomniac Games</td>
-                    </tr>
-                    <tr>
-                        <td><b>Distribuidora:</b></td>
-                        <td>Sony Interactive Entertainment</td>
-                    </tr>
-                    <tr>
-                        <td><b>Modos de jogo:</b></td>
-                        <td>Single player</td>
-                    </tr>
-                    <tr>
-                        <td><b>Idiomas:</b></td>
-                        <td>Português, Inglês, Espanhol</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-
-    <br>
-    <table width="100%" border="0">
-        <tr>
-            <td align="center">
-                <hr>
-                <p>© 2026 Estácio - Disciplina de Programação Web I</p>
-            </td>
-        </tr>
-    </table>
-
+    <footer class="footer">
+        <p>© 2026 Estácio - Disciplina de Programação Web I</p>
+    </footer>
 </body>
 
 </html>

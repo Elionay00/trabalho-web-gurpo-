@@ -1,182 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitrine Gamer - Estácio</title>
+    <link rel="stylesheet" href="vitrine.css">
 </head>
 
 <body>
+    <header class="header">
+        <h1>🎮 GAME DA SALA - ESTÁCIO</h1>
+        <nav class="nav">
+            <a href="carrinho.html">🛒 MEU CARRINHO</a>
+            <a href="index.html">SAIR</a>
+        </nav>
+    </header>
 
-    <table width="100%" border="1">
-        <tr>
-            <td>
-                <h2>🎮 GAME DA SALA - ESTÁCIO</h2>
-            </td>
-            <td align="right">
-                <a href="carrinho.html">🛒 MEU CARRINHO</a> |
-                <a href="index.html">SAIR</a>
-            </td>
-        </tr>
-    </table>
+    <main class="container">
+        <section class="hero">
+            <h2 class="page-title">🔥 CATÁLOGO DE JOGOS</h2>
+            <p class="page-subtitle"><i>Os jogos mais buscados do momento!</i></p>
+        </section>
 
-    <br>
+        <section class="games-grid">
+            <article class="game-card">
+                <img src="imgs/marvels-spider-man.jpeg" alt="Spider-Man 2">
+                <h3>Spider-Man 2</h3>
+                <div class="game-price">R$ 299,00</div>
+                <a href="detalhes.html?id=1" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(1, 'Spider-Man 2', 299.00, 'imgs/marvels-spider-man.jpeg')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
 
-    <table width="100%" border="0">
-        <tr>
-            <td align="center">
-                <h2>🔥 CATÁLOGO DE JOGOS</h2>
-                <p><i>Os jogos mais buscados do momento!</i></p>
-            </td>
-        </tr>
-    </table>
+            <article class="game-card">
+                <img src="imgs/Grand_Theft_VI.png" alt="GTA VI">
+                <h3>GTA VI</h3>
+                <div class="game-price">R$ 499,90</div>
+                <a href="detalhes.html?id=2" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(2, 'GTA VI', 499.90, 'imgs/Grand_Theft_VI.png')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
 
-    <br>
+            <article class="game-card">
+                <img src="imgs/Batman_Arkham.jpg" alt="Batman Arkham">
+                <h3>Batman Arkham</h3>
+                <div class="game-price">R$ 89,90</div>
+                <a href="detalhes.html?id=3" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(3, 'Batman Arkham', 89.90, 'imgs/Batman_Arkham.jpg')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
 
-    <table width="90%" align="center" border="1" cellpadding="15">
+            <article class="game-card">
+                <img src="imgs/Elden_Ring.jpg" alt="Elden Ring">
+                <h3>Elden Ring</h3>
+                <div class="game-price">R$ 249,00</div>
+                <a href="detalhes.html?id=4" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(4, 'Elden Ring', 249.00, 'imgs/Elden_Ring.jpg')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
 
-        <tr align="center" valign="top">
+            <article class="game-card">
+                <img src="imgs/god_of_war.png" alt="God of War">
+                <h3>God of War</h3>
+                <div class="game-price">R$ 199,00</div>
+                <a href="detalhes.html?id=5" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(5, 'God of War', 199.00, 'imgs/god_of_war.png')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
 
-            <td width="25%">
-                <img src="imgs/marvels-spider-man.jpeg" width="130" height="170"><br>
-                <b>Spider-Man 2</b><br>
-                R$ 299,00<br>
-                <br>
-                <a href="detalhes.html?id=1">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=1">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
+            <article class="game-card">
+                <img src="imgs/fifa 2025.jpg" alt="FC 25 (FIFA)">
+                <h3>FC 25 (FIFA)</h3>
+                <div class="game-price">R$ 350,00</div>
+                <a href="detalhes.html?id=6" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(6, 'FC 25 (FIFA)', 350.00, 'imgs/fifa 2025.jpg')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
 
-            <td width="25%">
-                <img src="imgs/Grand_Theft_VI.png" width="130" height="170"><br>
-                <b>GTA VI</b><br>
-                R$ 499,90<br>
-                <br>
-                <a href="detalhes.html?id=2">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=2">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
+            <article class="game-card">
+                <img src="imgs/Mortal_Kombat_1_.png" alt="Mortal Kombat 1">
+                <h3>Mortal Kombat 1</h3>
+                <div class="game-price">R$ 270,00</div>
+                <a href="detalhes.html?id=7" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(7, 'Mortal Kombat 1', 270.00, 'imgs/Mortal_Kombat_1_.png')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
 
-            <td width="25%">
-                <img src="imgs/Batman_Arkham.jpg" width="130" height="170"><br>
-                <b>Batman Arkham</b><br>
-                R$ 89,90<br>
-                <br>
-                <a href="detalhes.html?id=3">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=3">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
+            <article class="game-card">
+                <img src="imgs/resident-evil-4.jpg" alt="Resident Evil 4">
+                <h3>Resident Evil 4</h3>
+                <div class="game-price">R$ 150,00</div>
+                <a href="detalhes.html?id=8" class="btn-detalhes">📋 DETALHES</a>
+                <button onclick="adicionarAoCarrinho(8, 'Resident Evil 4', 150.00, 'imgs/resident-evil-4.jpg')" class="btn-comprar">🛒 COMPRAR</button>
+            </article>
+        </section>
 
-            <td width="25%">
-                <img src="imgs/Elden_Ring.jpg" width="130" height="170"><br>
-                <b>Elden Ring</b><br>
-                R$ 249,00<br>
-                <br>
-                <a href="detalhes.html?id=4">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=4">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
+        <div class="actions">
+            <a href="carrinho.html" class="btn-carrinho">🛒 VER MEU CARRINHO</a>
+            <small>Clique em DETALHES para ver informações do jogo | Clique em COMPRAR para adicionar ao carrinho</small>
+        </div>
+    </main>
 
-        </tr>
+    <footer class="footer">
+        <p>© 2026 Estácio - Disciplina de Programação Web I</p>
+    </footer>
 
-        <tr align="center" valign="top">
-
-            <td width="25%">
-                <img src="imgs/god_of_war.png" width="130" height="170"><br>
-                <b>God of War</b><br>
-                R$ 199,00<br>
-                <br>
-                <a href="detalhes.html?id=5">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=5">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
-
-            <td width="25%">
-                <img src="imgs/fifa 2025.jpg" width="130" height="170"><br>
-                <b>FC 25 (FIFA)</b><br>
-                R$ 350,00<br>
-                <br>
-                <a href="detalhes.html?id=6">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=6">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
-
-            <td width="25%">
-                <img src="imgs/Mortal_Kombat_1_.png" width="130" height="170"><br>
-                <b>Mortal Kombat 1</b><br>
-                R$ 270,00<br>
-                <br>
-                <a href="detalhes.html?id=7">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=7">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
-
-            <td width="25%">
-                <img src="imgs/resident-evil-4.jpg" width="130" height="170"><br>
-                <b>Resident Evil 4</b><br>
-                R$ 150,00<br>
-                <br>
-                <a href="detalhes.html?id=8">
-                    <button>📋 DETALHES</button>
-                </a>
-                <a href="carrinho.html?add=8">
-                    <button>🛒 COMPRAR</button>
-                </a>
-            </td>
-
-        </tr>
-
-    </table>
-
-    <br><br>
-
-    <table width="100%" border="0">
-        <tr>
-            <td align="center">
-                <a href="carrinho.html">
-                    <button style="padding: 10px 30px; font-size: 16px;">
-                        🛒 VER MEU CARRINHO
-                    </button>
-                </a>
-                <br><br>
-                <small>Clique em DETALHES para ver informações do jogo | Clique em COMPRAR para adicionar ao
-                    carrinho</small>
-            </td>
-        </tr>
-    </table>
-
-    <br>
-
-    <table width="100%" border="0">
-        <tr>
-            <td align="center">
-                <hr>
-                <p>© 2026 Estácio - Disciplina de Programação Web I</p>
-            </td>
-        </tr>
-    </table>
-
+    <script src="carrinho.js"></script>
 </body>
 
 </html>

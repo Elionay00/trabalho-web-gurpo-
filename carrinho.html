@@ -1,111 +1,100 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Carrinho - Game da Sala</title>
+    <link rel="stylesheet" href="carrinho.css">
 </head>
 
 <body>
+    <header class="header">
+        <h1>🎮 GAME DA SALA - ESTÁCIO</h1>
+        <nav>
+            <a href="vitrine.html">CONTINUAR COMPRANDO</a>
+            <a href="index.html">SAIR</a>
+        </nav>
+    </header>
 
-    <table width="100%" border="1">
-        <tr>
-            <td>
-                <h2>🎮 GAME DA SALA - ESTÁCIO</h2>
-            </td>
-            <td align="right"><a href="vitrine.html">CONTINUAR COMPRANDO</a> | <a href="index.html">SAIR</a></td>
-        </tr>
-    </table>
+    <main class="container">
+        <h2 class="cart-title">Meu Carrinho</h2>
 
-    <br>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>PRODUTO</th>
+                    <th>PREÇO</th>
+                    <th>QUANTIDADE</th>
+                    <th>TOTAL</th>
+                    <th>REMOVER</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="product-cell" data-label="Produto">
+                        <img src="imgs/marvels-spider-man.jpeg" alt="Spider-Man 2">
+                        <div class="product-info">
+                            <strong>Spider-Man 2</strong>
+                            <small>Código: SM2-001</small>
+                        </div>
+                    </td>
+                    <td data-label="Preço">R$ 299,00</td>
+                    <td data-label="Quantidade">
+                        <div class="quantity-control">
+                            <button class="btn-icon" type="button">-</button>
+                            <input class="quantity-input" type="text" value="1">
+                            <button class="btn-icon" type="button">+</button>
+                        </div>
+                    </td>
+                    <td data-label="Total"><strong>R$ 299,00</strong></td>
+                    <td data-label="Remover"><button class="btn-icon btn-remove" type="button">❌</button></td>
+                </tr>
+                <tr>
+                    <td class="product-cell" data-label="Produto">
+                        <img src="imgs/god_of_war.png" alt="God of War">
+                        <div class="product-info">
+                            <strong>God of War</strong>
+                            <small>Código: GOW-002</small>
+                        </div>
+                    </td>
+                    <td data-label="Preço">R$ 199,00</td>
+                    <td data-label="Quantidade">
+                        <div class="quantity-control">
+                            <button class="btn-icon" type="button">-</button>
+                            <input class="quantity-input" type="text" value="2">
+                            <button class="btn-icon" type="button">+</button>
+                        </div>
+                    </td>
+                    <td data-label="Total"><strong>R$ 398,00</strong></td>
+                    <td data-label="Remover"><button class="btn-icon btn-remove" type="button">❌</button></td>
+                </tr>
+                <tr class="summary-row">
+                    <td colspan="3">TOTAL DO PEDIDO:</td>
+                    <td colspan="2">R$ 697,00</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <table width="90%" align="center" border="1" cellpadding="10">
-        <tr>
-            <td align="center" bgcolor="#ddd"><b>PRODUTO</b></td>
-            <td align="center" bgcolor="#ddd"><b>PREÇO</b></td>
-            <td align="center" bgcolor="#ddd"><b>QUANTIDADE</b></td>
-            <td align="center" bgcolor="#ddd"><b>TOTAL</b></td>
-            <td align="center" bgcolor="#ddd"><b>REMOVER</b></td>
-        </tr>
+        <div class="actions">
+            <a href="vitrine.html" class="btn-addmore">➕ ADICIONAR MAIS ITENS</a>
+            <a href="checkout.html" class="btn-checkout">✅ FINALIZAR COMPRA</a>
+            <button class="btn-clear" type="button">🗑️ LIMPAR CARRINHO</button>
+        </div>
 
-        <tr align="center">
-            <td align="left">
-                <img src="imgs/marvels-spider-man.jpeg" width="40" height="50" align="left" hspace="10">
-                <b>Spider-Man 2</b><br>
-                <small>Código: SM2-001</small>
-            </td>
-            <td>R$ 299,00</td>
-            <td>
-                <button>-</button>
-                <input type="text" value="1" size="3" align="center">
-                <button>+</button>
-            </td>
-            <td><b>R$ 299,00</b></td>
-            <td><button>❌</button></td>
-        </tr>
+        <section class="coupon-section">
+            <strong>🎟️ CUPOM DE DESCONTO</strong>
+            <div>
+                <input type="text" placeholder="Digite seu cupom">
+                <button class="btn-coupon" type="button">Aplicar</button>
+            </div>
+            <small>Ex: GAMER10, ESTACIO15, WEB2026</small>
+        </section>
+    </main>
 
-        <tr align="center">
-            <td align="left">
-                <img src="imgs/god_of_war.png" width="40" height="50" align="left" hspace="10">
-                <b>God of War</b><br>
-                <small>Código: GOW-002</small>
-            </td>
-            <td>R$ 199,00</td>
-            <td>
-                <button>-</button>
-                <input type="text" value="2" size="3">
-                <button>+</button>
-            </td>
-            <td><b>R$ 398,00</b></td>
-            <td><button>❌</button></td>
-        </tr>
-
-        <tr align="right">
-            <td colspan="3"><b>TOTAL DO PEDIDO:</b></td>
-            <td align="center">
-                <font size="4"><b>R$ 697,00</b></font>
-            </td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td colspan="5" align="center">
-                <br>
-                <a href="vitrine.html">
-                    <button>➕ ADICIONAR MAIS ITENS</button>
-                </a>
-                <a href="checkout.html">
-                    <button>✅ FINALIZAR COMPRA</button>
-                </a>
-                <button>🗑️ LIMPAR CARRINHO</button>
-                <br><br>
-            </td>
-        </tr>
-    </table>
-
-    <br>
-
-    <table width="50%" align="center" border="1" cellpadding="10">
-        <tr>
-            <td align="center">
-                <b>🎟️ CUPOM DE DESCONTO</b><br><br>
-                <input type="text" placeholder="Digite seu cupom" size="30">
-                <button>Aplicar</button>
-                <br><small>Ex: GAMER10, ESTACIO15, WEB2026</small>
-            </td>
-        </tr>
-    </table>
-
-    <br>
-    <table width="100%" border="0">
-        <tr>
-            <td align="center">
-                <hr>
-                <p>© 2026 Estácio - Disciplina de Programação Web I</p>
-            </td>
-        </tr>
-    </table>
-
+    <footer class="footer">
+        <p>© 2026 Estácio - Disciplina de Programação Web I</p>
+    </footer>
 </body>
 
 </html>
