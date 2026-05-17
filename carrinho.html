@@ -1,100 +1,161 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Carrinho - Game da Sala</title>
     <link rel="stylesheet" href="carrinho.css">
 </head>
-
 <body>
+
     <header class="header">
         <h1>🎮 GAME DA SALA - ESTÁCIO</h1>
         <nav>
             <a href="vitrine.html">CONTINUAR COMPRANDO</a>
-            <a href="index.html">SAIR</a>
+            <a href="login.html">SAIR</a>
         </nav>
     </header>
 
     <main class="container">
-        <h2 class="cart-title">Meu Carrinho</h2>
+        <h2 class="cart-title">Seu Carrinho de Compras</h2>
 
         <table class="cart-table">
             <thead>
                 <tr>
-                    <th>PRODUTO</th>
+                    <th class="product-cell">PRODUTO</th>
                     <th>PREÇO</th>
                     <th>QUANTIDADE</th>
                     <th>TOTAL</th>
                     <th>REMOVER</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td class="product-cell" data-label="Produto">
-                        <img src="imgs/marvels-spider-man.jpeg" alt="Spider-Man 2">
-                        <div class="product-info">
-                            <strong>Spider-Man 2</strong>
-                            <small>Código: SM2-001</small>
-                        </div>
-                    </td>
-                    <td data-label="Preço">R$ 299,00</td>
-                    <td data-label="Quantidade">
-                        <div class="quantity-control">
-                            <button class="btn-icon" type="button">-</button>
-                            <input class="quantity-input" type="text" value="1">
-                            <button class="btn-icon" type="button">+</button>
-                        </div>
-                    </td>
-                    <td data-label="Total"><strong>R$ 299,00</strong></td>
-                    <td data-label="Remover"><button class="btn-icon btn-remove" type="button">❌</button></td>
-                </tr>
-                <tr>
-                    <td class="product-cell" data-label="Produto">
-                        <img src="imgs/god_of_war.png" alt="God of War">
-                        <div class="product-info">
-                            <strong>God of War</strong>
-                            <small>Código: GOW-002</small>
-                        </div>
-                    </td>
-                    <td data-label="Preço">R$ 199,00</td>
-                    <td data-label="Quantidade">
-                        <div class="quantity-control">
-                            <button class="btn-icon" type="button">-</button>
-                            <input class="quantity-input" type="text" value="2">
-                            <button class="btn-icon" type="button">+</button>
-                        </div>
-                    </td>
-                    <td data-label="Total"><strong>R$ 398,00</strong></td>
-                    <td data-label="Remover"><button class="btn-icon btn-remove" type="button">❌</button></td>
-                </tr>
+            <tbody id="itens-carrinho">
+                </tbody>
+            <tfoot>
                 <tr class="summary-row">
-                    <td colspan="3">TOTAL DO PEDIDO:</td>
-                    <td colspan="2">R$ 697,00</td>
+                    <td colspan="3" style="text-align: right; padding-right: 20px;">TOTAL DO PEDIDO:</td>
+                    <td id="total-pedido">R$ 0,00</td>
+                    <td></td>
                 </tr>
-            </tbody>
+            </tfoot>
         </table>
 
-        <div class="actions">
+        <div style="margin-top: 30px; text-align: center;">
             <a href="vitrine.html" class="btn-addmore">➕ ADICIONAR MAIS ITENS</a>
+            <button id="btn-limpar" class="btn-clear">🗑️ LIMPAR CARRINHO</button>
             <a href="checkout.html" class="btn-checkout">✅ FINALIZAR COMPRA</a>
-            <button class="btn-clear" type="button">🗑️ LIMPAR CARRINHO</button>
         </div>
 
         <section class="coupon-section">
-            <strong>🎟️ CUPOM DE DESCONTO</strong>
-            <div>
-                <input type="text" placeholder="Digite seu cupom">
-                <button class="btn-coupon" type="button">Aplicar</button>
-            </div>
-            <small>Ex: GAMER10, ESTACIO15, WEB2026</small>
+            <h3>🎟️ CUPOM DE DESCONTO</h3>
+            <br>
+            <input type="text" id="input-cupom" placeholder="Digite seu cupom">
+            <button id="btn-cupom" class="btn-action" style="background-color: #6c757d; color: white;">Aplicar</button>
+            <small>Exeturas válidas: GAMER10, ESTACIO15, WEB2026</small>
         </section>
     </main>
 
     <footer class="footer">
         <p>© 2026 Estácio - Disciplina de Programação Web I</p>
     </footer>
-</body>
 
+    <script>
+        const tbody = document.getElementById('itens-carrinho');
+        const totalTd = document.getElementById('total-pedido');
+        let desconto = 0;
+
+        function renderizarCarrinho() {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            tbody.innerHTML = '';
+            let totalPedido = 0;
+
+            if (carrinho.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 40px; color: #777;">Seu carrinho está vazio neste momento.</td></tr>`;
+                totalTd.innerText = "R$ 0,00";
+                return;
+            }
+
+            carrinho.forEach(item => {
+                const totalItem = item.preco * item.quantidade;
+                totalPedido += totalItem;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="product-cell" data-label="PRODUTO">
+                        <img src="${item.imagem}" alt="${item.nome}">
+                        <div class="product-info">
+                            <strong>${item.nome}</strong>
+                            <small>Código: GAME-${item.id}</small>
+                        </div>
+                    </td>
+                    <td data-label="PREÇO">R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
+                    <td data-label="QUANTIDADE">
+                        <div class="quantity-control">
+                            <button class="btn-icon" onclick="alterarQuantidade(${item.id}, -1)">-</button>
+                            <input type="text" value="${item.quantidade}" readonly>
+                            <button class="btn-icon" onclick="alterarQuantidade(${item.id}, 1)">+</button>
+                        </div>
+                    </td>
+                    <td data-label="TOTAL"><strong>R$ ${totalItem.toFixed(2).replace('.', ',')}</strong></td>
+                    <td data-label="REMOVER">
+                        <button class="btn-action btn-remove" onclick="removerItem(${item.id})">❌</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            totalPedido = totalPedido * (1 - desconto);
+            totalTd.innerText = `R$ ${totalPedido.toFixed(2).replace('.', ',')}`;
+        }
+
+        function alterarQuantidade(id, valor) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const item = carrinho.find(i => i.id === id);
+
+            if (item) {
+                item.quantidade += valor;
+                if (item.quantidade <= 0) {
+                    removerItem(id);
+                    return;
+                }
+            }
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            renderizarCarrinho();
+        }
+
+        function removerItem(id) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho = carrinho.filter(item => item.id !== id);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            renderizarCarrinho();
+        }
+
+        document.getElementById('btn-limpar').addEventListener('click', () => {
+            if (confirm("Deseja realmente limpar seu carrinho?")) {
+                localStorage.removeItem('carrinho');
+                renderizarCarrinho();
+            }
+        });
+
+        document.getElementById('btn-cupom').addEventListener('click', () => {
+            const cupom = document.getElementById('input-cupom').value.toUpperCase().trim();
+            if (cupom === 'GAMER10') {
+                desconto = 0.10;
+                alert('Cupom de 10% aplicado!');
+            } else if (cupom === 'ESTACIO15') {
+                desconto = 0.15;
+                alert('Cupom de 15% aplicado!');
+            } else if (cupom === 'WEB2026') {
+                desconto = 0.20;
+                alert('Cupom de 20% aplicado!');
+            } else {
+                desconto = 0;
+                alert('Cupom inválido.');
+            }
+            renderizarCarrinho();
+        });
+
+        renderizarCarrinho();
+    </script>
+</body>
 </html>

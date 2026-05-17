@@ -1,105 +1,159 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitrine Gamer - Estácio</title>
+    <title>Vitrine - Game da Sala</title>
     <link rel="stylesheet" href="vitrine.css">
 </head>
-
 <body>
-    <header class="header">
-        <h1>🎮 GAME DA SALA - ESTÁCIO</h1>
-        <nav class="nav">
-            <a href="carrinho.html">🛒 MEU CARRINHO</a>
-            <a href="index.html">SAIR</a>
-        </nav>
-    </header>
+    <table class="container-header" width="100%" border="0">
+        <tr>
+            <td>
+                <h2>🎮 GAME DA SALA - ESTÁCIO</h2>
+            </td>
+            <td align="right">
+                <a href="carrinho.html" class="link-header">MEU CARRINHO</a> | 
+                <a href="login.html" class="link-header">SAIR</a>
+            </td>
+        </tr>
+    </table>
 
-    <main class="container">
-        <section class="hero">
-            <h2 class="page-title">🔥 CATÁLOGO DE JOGOS</h2>
-            <p class="page-subtitle"><i>Os jogos mais buscados do momento!</i></p>
-        </section>
+    <br><br>
 
-        <section class="games-grid">
-            <article class="game-card">
-                <img src="imgs/marvels-spider-man.jpeg" alt="Spider-Man 2">
-                <h3>Spider-Man 2</h3>
-                <div class="game-price">R$ 299,00</div>
-                <a href="detalhes.html?id=1" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(1, 'Spider-Man 2', 299.00, 'imgs/marvels-spider-man.jpeg')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
+    <table class="grid-produtos" align="center" border="0" width="80%" cellpadding="15">
+        <tr>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/marvels-spider-man.jpeg" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">Spider-Man 2</span><br>
+                    <span class="preco-produto">R$ 299,00</span><br><br>
+                    <a href="detalhes.html?id=1" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="1">Comprar</a>
+                </div>
+            </td>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/Grand_Theft_VI.png" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">GTA VI</span><br>
+                    <span class="preco-produto">R$ 499,90</span><br><br>
+                    <a href="detalhes.html?id=2" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="2">Comprar</a>
+                </div>
+            </td>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/Batman_Arkham.jpg" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">Batman Arkham</span><br>
+                    <span class="preco-produto">R$ 89,90</span><br><br>
+                    <a href="detalhes.html?id=3" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="3">Comprar</a>
+                </div>
+            </td>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/Elden_Ring.jpg" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">Elden Ring</span><br>
+                    <span class="preco-produto">R$ 249,00</span><br><br>
+                    <a href="detalhes.html?id=4" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="4">Comprar</a>
+                </div>
+            </td>
+        </tr>
 
-            <article class="game-card">
-                <img src="imgs/Grand_Theft_VI.png" alt="GTA VI">
-                <h3>GTA VI</h3>
-                <div class="game-price">R$ 499,90</div>
-                <a href="detalhes.html?id=2" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(2, 'GTA VI', 499.90, 'imgs/Grand_Theft_VI.png')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
+        <tr>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/god_of_war.png" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">God of War</span><br>
+                    <span class="preco-produto">R$ 199,00</span><br><br>
+                    <a href="detalhes.html?id=5" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="5">Comprar</a>
+                </div>
+            </td>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/fifa 2025.jpg" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">FC 25 (FIFA)</span><br>
+                    <span class="preco-produto">R$ 350,00</span><br><br>
+                    <a href="detalhes.html?id=6" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="6">Comprar</a>
+                </div>
+            </td>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/Mortal_Kombat_1_.png" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">Mortal Kombat 1</span><br>
+                    <span class="preco-produto">R$ 270,00</span><br><br>
+                    <a href="detalhes.html?id=7" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="7">Comprar</a>
+                </div>
+            </td>
+            <td align="center" width="25%">
+                <div class="card-produto">
+                    <img src="imgs/resident-evil-4.jpg" width="160" height="210" class="img-produto"><br>
+                    <span class="titulo-produto">Resident Evil 4</span><br>
+                    <span class="preco-produto">R$ 150,00</span><br><br>
+                    <a href="detalhes.html?id=8" class="btn-detalhes">Detalhes</a>
+                    <a href="#" class="btn-comprar" data-id="8">Comprar</a>
+                </div>
+            </td>
+        </tr>
+    </table>
 
-            <article class="game-card">
-                <img src="imgs/Batman_Arkham.jpg" alt="Batman Arkham">
-                <h3>Batman Arkham</h3>
-                <div class="game-price">R$ 89,90</div>
-                <a href="detalhes.html?id=3" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(3, 'Batman Arkham', 89.90, 'imgs/Batman_Arkham.jpg')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
+    <br><br>
 
-            <article class="game-card">
-                <img src="imgs/Elden_Ring.jpg" alt="Elden Ring">
-                <h3>Elden Ring</h3>
-                <div class="game-price">R$ 249,00</div>
-                <a href="detalhes.html?id=4" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(4, 'Elden Ring', 249.00, 'imgs/Elden_Ring.jpg')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
+    <script>
+        // Array com os dados dos produtos para sincronizar com o carrinho
+        const listaProdutos = [
+            { id: 1, nome: "Spider-Man 2", preco: 299.00, imagem: "imgs/marvels-spider-man.jpeg" },
+            { id: 2, nome: "GTA VI", preco: 499.90, imagem: "imgs/Grand_Theft_VI.png" },
+            { id: 3, nome: "Batman Arkham", preco: 89.90, imagem: "imgs/Batman_Arkham.jpg" },
+            { id: 4, nome: "Elden Ring", preco: 249.00, imagem: "imgs/Elden_Ring.jpg" },
+            { id: 5, nome: "God of War", preco: 199.00, imagem: "imgs/god_of_war.png" },
+            { id: 6, nome: "FC 25 (FIFA)", preco: 350.00, imagem: "imgs/fifa 2025.jpg" },
+            { id: 7, nome: "Mortal Kombat 1", preco: 270.00, imagem: "imgs/Mortal_Kombat_1_.png" },
+            { id: 8, nome: "Resident Evil 4", preco: 150.00, imagem: "imgs/resident-evil-4.jpg" }
+        ];
 
-            <article class="game-card">
-                <img src="imgs/god_of_war.png" alt="God of War">
-                <h3>God of War</h3>
-                <div class="game-price">R$ 199,00</div>
-                <a href="detalhes.html?id=5" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(5, 'God of War', 199.00, 'imgs/god_of_war.png')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
+        // Função para adicionar o item ao localStorage
+        function adicionarAoCarrinho(idProduto) {
+            const produto = listaProdutos.find(p => p.id === idProduto);
+            if (!produto) return;
 
-            <article class="game-card">
-                <img src="imgs/fifa 2025.jpg" alt="FC 25 (FIFA)">
-                <h3>FC 25 (FIFA)</h3>
-                <div class="game-price">R$ 350,00</div>
-                <a href="detalhes.html?id=6" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(6, 'FC 25 (FIFA)', 350.00, 'imgs/fifa 2025.jpg')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
+            // Obtém o carrinho atual ou cria um novo array se estiver vazio
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-            <article class="game-card">
-                <img src="imgs/Mortal_Kombat_1_.png" alt="Mortal Kombat 1">
-                <h3>Mortal Kombat 1</h3>
-                <div class="game-price">R$ 270,00</div>
-                <a href="detalhes.html?id=7" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(7, 'Mortal Kombat 1', 270.00, 'imgs/Mortal_Kombat_1_.png')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
+            // Verifica se o item já existe no carrinho
+            const itemExistente = carrinho.find(item => item.id === idProduto);
 
-            <article class="game-card">
-                <img src="imgs/resident-evil-4.jpg" alt="Resident Evil 4">
-                <h3>Resident Evil 4</h3>
-                <div class="game-price">R$ 150,00</div>
-                <a href="detalhes.html?id=8" class="btn-detalhes">📋 DETALHES</a>
-                <button onclick="adicionarAoCarrinho(8, 'Resident Evil 4', 150.00, 'imgs/resident-evil-4.jpg')" class="btn-comprar">🛒 COMPRAR</button>
-            </article>
-        </section>
+            if (itemExistente) {
+                itemExistente.quantidade += 1;
+            } else {
+                carrinho.push({
+                    id: produto.id,
+                    nome: produto.nome,
+                    preco: produto.preco,
+                    imagem: produto.imagem,
+                    quantidade: 1
+                });
+            }
 
-        <div class="actions">
-            <a href="carrinho.html" class="btn-carrinho">🛒 VER MEU CARRINHO</a>
-            <small>Clique em DETALHES para ver informações do jogo | Clique em COMPRAR para adicionar ao carrinho</small>
-        </div>
-    </main>
+            // Grava de volta no localStorage
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            
+            // Exibe mensagem de confirmação amigável
+            alert(`🎮 ${produto.nome} foi adicionado ao seu carrinho com sucesso!`);
+        }
 
-    <footer class="footer">
-        <p>© 2026 Estácio - Disciplina de Programação Web I</p>
-    </footer>
-
-    <script src="carrinho.js"></script>
+        // Mapeia todos os botões de comprar para escutarem o evento de clique
+        document.querySelectorAll('.btn-comprar').forEach(botao => {
+            botao.addEventListener('click', function(e) {
+                e.preventDefault(); // Impede que a página recarregue ou suba
+                const id = parseInt(this.getAttribute('data-id'));
+                adicionarAoCarrinho(id);
+            });
+        });
+    </script>
 </body>
-
 </html>
